@@ -90,12 +90,12 @@
 							Introduce about <br>
 							myself</h2>
 						<p>
-							Whose given. Were gathered. There first subdue greater. Bearing you Whales heaven 
+							Whose given. Were gathered. There first subdue greater. Bearing you Whales heaven
 							midst their. Beast creepeth. Fish days.
 						</p>
 						<p>
-							Is give may shall likeness made yielding spirit a itself together created after sea 
-							is in beast beginning signs open god you're gathering whose gathered cattle let. 
+							Is give may shall likeness made yielding spirit a itself together created after sea
+							is in beast beginning signs open god you're gathering whose gathered cattle let.
 							Creature whales fruit unto meat the life beginning all in under give two.
 						</p>
 						<a class="primary_btn" href="#"><span>Download CV</span></a>
@@ -125,23 +125,14 @@
     </tr>
   </thead>
   <tbody>
+  @foreach( $projects as $project)
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{ $project->name }}</th>
       <td>Mark</td>
       <td>Otto</td>
       <td>@mdo</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+  @endforeach
   </tbody>
 </table>
 				</div>
