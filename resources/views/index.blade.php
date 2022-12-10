@@ -26,7 +26,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+					<a class="navbar-brand logo_h" href="{{ route('home') }}"><img src="img/logo2-bg.png" alt=""></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
@@ -36,9 +36,8 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="{{ route("portfolio") }}">Portfolio</a></li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+							<li class="nav-item active"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -55,8 +54,8 @@
 					<div class="col-lg-7">
 						<div class="banner_content">
 							<h3 class="text-uppercase">Hell0</h3>
-							<h1 class="text-uppercase">I am José Manuel</h1>
-							<h5 class="text-uppercase">Web Developer</h5>
+							<h1 class="text-uppercase" id="typewritter">I am José Manuel</h1>
+							<h5 class="text-uppercase" style="display: none" id="typewritter2">Full-Stack Developer</h5>
 							<div class="d-flex align-items-center">
 								<a class="primary_btn" href="#"><span>Linked In</span></a>
 								<a class="primary_btn" href="#"><span>Github</span></a>
@@ -115,26 +114,30 @@
 						<h2>quality work <br>
 							Recently done project </h2>
 					</div>
-          <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-  @foreach( $projects as $project)
-    <tr>
-      <th scope="row">{{ $project->name }}</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-  @endforeach
-  </tbody>
-</table>
+                    <div class="responsive-table">
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Name</th>
+                              <th scope="col">Description</th>
+                              <th scope="col">Language</th>
+                              <th scope="col">Role</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          @foreach( $projects as $project)
+                              @if (!$project->private)
+                                <tr>
+                                  <th scope="row"><a href="{{ $project->html_url }}}">{{ $project->name }}</a></th>
+                                  <td>{{ $project->description }}</td>
+                                  <td>{{ $project->language }}</td>
+                                  <td>@if($project->owner->login != "jmsaez2712") Collaborator @else Creator @endif</td>
+                                </tr>
+                              @endif
+                          @endforeach
+                          </tbody>
+                      </table>
+                    </div>
 				</div>
 			</div>
 		</div>
@@ -146,10 +149,10 @@
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-12">
-					<div class="subscription_box text-center">
-						<h2 class="text-uppercase text-white">Let's keep in touch</h2>
+					<div class="text-center">
+						<h2 class="text-uppercase mb-5">Let's keep in touch</h2>
 						<div class="subcribe-form" id="mc_embed_signup">
-								<button class="primary-btn hover d-inline">Contact me</button>
+								<a class="primary_btn" href="{{ route('contact') }}">Contact me</a>
 						</div>
 					</div>
 				</div>
@@ -165,9 +168,6 @@
 				<div class="col-lg-12">
 					<div class="footer_top flex-column">
 						<div class="footer_logo">
-							<a href="#">
-								<img src="img/logo.png" alt="">
-							</a>
 							<h4>Follow Me</h4>
 						</div>
 						<div class="footer_social">
@@ -204,6 +204,31 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 	<script src="js/gmaps.min.js"></script>
 	<script src="js/theme.js"></script>
+    <script>
+        function typingEffect(element,speed){
+            let text=element.innerHTML;
+            element.innerHTML="";
+            var i=0;
+            var timer=setInterval(function(){
+                if(i<text.length){
+                    element.append(text.charAt(i))
+                    i++;
+                }else{
+                    clearInterval(timer);
+                }
+            },speed)
+        }
+
+        const h1=document.getElementById('typewritter');
+        const h2=document.getElementById('typewritter2');
+
+        typingEffect(h1, 150);
+        setTimeout(() => {
+            h2.style.display = 'block';
+            typingEffect(h2, 150)
+        }, 2550)
+
+    </script>
 </body>
 
 </html>

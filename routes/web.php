@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\PortfolioController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\PortfolioController::class, 'index'])->name('home');
 
-Route::get('/portfolio', function(){
-    return view('portfolio');
-})->name('portfolio');
+Route::get('/contact', function(){
+    return view('contact');
+})->name('contact');

@@ -40,7 +40,7 @@ class Project extends Model
         if($err){
             echo $err;
         } else {
-            echo "<pre>" . var_export(json_decode($response),true) . "</pre>"; exit;
+            //echo "<pre>" . var_export(json_decode($response),true) . "</pre>"; exit;
             return json_decode($response);
         }
 

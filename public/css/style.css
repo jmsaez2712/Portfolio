@@ -7,7 +7,7 @@ is the file you need to edit to change the look of the
 theme.
 ---------------------------------------------------- */
 /*=====================================================================
-@Template Name: HostHub Construction 
+@Template Name: HostHub Construction
 @Developed By: Naim Lasker
 Author E-mail: naimlasker@gmail.com
 
@@ -180,23 +180,23 @@ button:focus {
   border-radius: 5px;
   background-origin: border-box;
   background-clip: content-box, border-box;
-  background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee);
+  background-image: linear-gradient(to right, #351a34 0%, #854fee 100%), radial-gradient(circle at top left, #351a34, #854fee);
   border: double 2px transparent;
   box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3); }
   .primary_btn span {
     padding: 0 42px; }
   .primary_btn.tr-bg {
-    background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, #4458dc, #854fee);
+    background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, #351a34, #854fee);
     border: 2px solid transparent;
     color: #222222;
     box-shadow: none; }
     .primary_btn.tr-bg:hover {
-      background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee);
+      background-image: linear-gradient(to right, #351a34 0%, #854fee 100%), radial-gradient(circle at top left, #351a34, #854fee);
       border: double 2px transparent;
       color: #ffffff;
       box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3); }
   .primary_btn:hover {
-    background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, #4458dc, #854fee);
+    background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, #351a34, #854fee);
     border: 2px solid #854fee;
     color: #222222;
     box-shadow: none;
@@ -209,6 +209,11 @@ button:focus {
   height: 100%;
   width: 100%; }
 
+.gradient-text {
+    background: -webkit-linear-gradient(right, #854fee 0%, #351a34 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 .header_area {
@@ -235,7 +240,7 @@ button:focus {
         .header_area .navbar .nav .nav-item .nav-link:after {
           display: none; }
       .header_area .navbar .nav .nav-item:hover .nav-link, .header_area .navbar .nav .nav-item.active .nav-link {
-        color: #4458dc; }
+        color: #854fee; }
       .header_area .navbar .nav .nav-item.submenu {
         position: relative; }
         .header_area .navbar .nav .nav-item.submenu ul {
@@ -1161,7 +1166,6 @@ button:focus {
     line-height: 24px;
     font-weight: 600; }
   .contact_info .info_item h6 {
-    font-size: 16px;
     line-height: 24px;
     color: "Roboto", sans-serif;
     font-weight: bold;
