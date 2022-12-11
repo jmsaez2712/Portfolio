@@ -57,8 +57,8 @@
 							<h1 class="text-uppercase" id="typewritter">I am José Manuel</h1>
 							<h5 class="text-uppercase" style="display: none" id="typewritter2">Full-Stack Developer</h5>
 							<div class="d-flex align-items-center">
-								<a class="primary_btn" href="#"><span>Linked In</span></a>
-								<a class="primary_btn" href="#"><span>Github</span></a>
+                                <a class="primary_btn" target="_blank" href="https://www.linkedin.com/in/jmsaez2712/"><span><i class="fa fa-linkedin-square mr-2"></i>Linked In</span></a>
+								<a class="primary_btn" target="_blank" href="https://github.com/jmsaez2712"><span><i class="fa fa-github mr-2"></i>Github</span></a>
 							</div>
 						</div>
 					</div>
@@ -89,15 +89,19 @@
 							Introduce about <br>
 							myself</h2>
 						<p>
-							Whose given. Were gathered. There first subdue greater. Bearing you Whales heaven
-							midst their. Beast creepeth. Fish days.
-						</p>
+                            I consider myself a responsible, curious and hard-working boy.
+                            I am passionate about the world of computing, more specifically programming.
+                            In certain free moments I do projects for myself as an entertainment and as a way
+                            to broaden my knowledge and explore areas of programming that I have not touched before.
+                            I also like video games and badminton, a sport in which I have a coaching certification.
+                        </p>
 						<p>
-							Is give may shall likeness made yielding spirit a itself together created after sea
-							is in beast beginning signs open god you're gathering whose gathered cattle let.
-							Creature whales fruit unto meat the life beginning all in under give two.
-						</p>
-						<a class="primary_btn" href="#"><span>Download CV</span></a>
+                            As a person, I am somewhat introverted at first with new people or environments,
+                            but I adapt quickly and along with that adaptation, that introversion disappears.
+                            I consider that I work well in a group, trying to give the best of me to everyone
+                            conforming the group.
+                        </p>
+						<a class="primary_btn" target="_blank" href="{{ asset('cv/CV-EN.pdf') }}"><span>Download CV</span></a>
 					</div>
 				</div>
 			</div>
@@ -114,29 +118,19 @@
 						<h2>quality work <br>
 							Recently done project </h2>
 					</div>
-                    <div class="responsive-table">
-                      <table class="table">
-                          <thead>
-                            <tr>
-                              <th scope="col">Name</th>
-                              <th scope="col">Description</th>
-                              <th scope="col">Language</th>
-                              <th scope="col">Role</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                          @foreach( $projects as $project)
-                              @if (!$project->private)
-                                <tr>
-                                  <th scope="row"><a href="{{ $project->html_url }}}">{{ $project->name }}</a></th>
-                                  <td>{{ $project->description }}</td>
-                                  <td>{{ $project->language }}</td>
-                                  <td>@if($project->owner->login != "jmsaez2712") Collaborator @else Creator @endif</td>
-                                </tr>
-                              @endif
-                          @endforeach
-                          </tbody>
-                      </table>
+                    <div class="col-lg-12">
+                      @foreach( $projects as $key => $project)
+                          @if (!$project->private)
+                      <div class="row">
+                          <div>
+                              <h2><a class="gradient-text-title" href="{{ $project->html_url }}">{{ $project->name }}</a></h2>
+                              <p>{{ $project->description }}</p>
+                              <h5>Language: <span style="color: #854fee">{{ $project->language }}</span></h5>
+                              <p>Role: @if($project->owner->login != "jmsaez2712") Collaborator @else Creator @endif</p>
+                          </div>
+                      </div>
+                          @endif
+                      @endforeach
                     </div>
 				</div>
 			</div>
@@ -147,7 +141,7 @@
 	<!--================ Start Newsletter Area =================-->
 	<section class="newsletter_area">
 		<div class="container">
-			<div class="row justify-content-center align-items-center">
+			<div class="row justify-content-center align-items-center pb-5">
 				<div class="col-lg-12">
 					<div class="text-center">
 						<h2 class="text-uppercase mb-5">Let's keep in touch</h2>
@@ -171,17 +165,14 @@
 							<h4>Follow Me</h4>
 						</div>
 						<div class="footer_social">
-							<a href="#"><i class="fa fa-linkedin"></i></a>
-							<a href="#"><i class="fa fa-github"></i></a>
+							<a href="https://www.linkedin.com/in/jmsaez2712/"><i class="fa fa-linkedin"></i></a>
+							<a href="https://github.com/jmsaez2712"><i class="fa fa-github"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row footer_bottom justify-content-center">
-				<p class="col-lg-8 col-sm-12 footer-text">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				<p class="col-lg-8 col-sm-12 footer-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
 			</div>
 		</div>
 	</footer>

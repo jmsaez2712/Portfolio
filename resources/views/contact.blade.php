@@ -125,17 +125,14 @@
                         <h4>Follow Me</h4>
                     </div>
                     <div class="footer_social">
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/jmsaez2712/"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://github.com/jmsaez2712"><i class="fa fa-github"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row footer_bottom justify-content-center">
-            <p class="col-lg-8 col-sm-12 footer-text">
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p class="col-lg-8 col-sm-12 footer-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
         </div>
     </div>
 </footer>

@@ -25,7 +25,7 @@ class Project extends Model
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => [
                 "Accept: application/vnd.github+json",
-                "Authorization: token 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",
+                "Authorization: token ". env("TOKEN_GITHUB"),
                 "X-GitHub-Api-Version: 2022-11-28",
                 "User-Agent: curl/" . curl_version()['version']
             ],
