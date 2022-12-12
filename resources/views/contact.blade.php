@@ -53,8 +53,8 @@
             <div class="banner_content text-center">
                 <h2 class="gradient-text">Contact Me</h2>
                 <div class="page_link">
-                    <a class="gradient-text" href="index.html">Home</a>
-                    <a class="gradient-text" href="contact.html">Contact</a>
+                    <a class="gradient-text" href="{{ route('home') }}">Home</a>
+                    <a class="gradient-text" href="{{ route('contact') }}">Contact</a>
                 </div>
             </div>
         </div>
@@ -81,12 +81,13 @@
                     <div class="info_item">
                         <i class="lnr lnr-envelope"></i>
                         <h6><a href="#">jose_manuel_saez@hotmail.es</a></h6>
-                        <p>Send me a email anytime!</p>
+                        <p>Send me an email anytime!</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-9">
-                <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                <form class="row contact_form" action="{{ route('send-contact') }}" method="post" id="contactForm" novalidate="novalidate">
+                    @csrf
                     <div class="col-md-6">
                         <div class="form-group">
                             <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">

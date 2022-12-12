@@ -18,3 +18,5 @@ Route::get('/', [\App\Http\Controllers\PortfolioController::class, 'index'])->na
 Route::get('/contact', function(){
     return view('contact');
 })->name('contact');
+
+Route::post('/sendcontact', [\App\Http\Controllers\PortfolioController::class, 'sendContactForm'])->name('send-contact');
